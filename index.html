@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algo Visualizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id = "inputSection">
+        <section>
+            <label for="nums">Enter nums:</label>
+            <div style="position: relative;height: 56px">
+                <input type="range" min = "10" max = "1000" id= "range" value = "35" oninput="updateView();updateInput()"/>
+                <div id="rangeSelector">
+                    <div id = "selectorBtn"></div>
+                    <div id = "rangeDisplayer"></div>
+                </div>
+            </div>
+            <script>
+                updateView()
+                function updateView(){
+                    var slider = document.getElementById("range")
+                    var selector = document.getElementById("rangeSelector")
+                    var display = document.getElementById("rangeDisplayer")
+                    selector.style.left = (slider.value - 10)/990 * 100 + '%';
+                    display.innerHTML = slider.value
+                }
+            </script>
+        </section>
+        <section>
+            <label for="type" >Sorting type</label>
+            <select class ="select" name = "sortingType" id = "sortingType" oninput="updateInput()">
+                <option value = "selection" selected>Selection Sort</option>
+                <option value = "bubble">Bubble Sort</option>
+                <option value = "insertion">Insertion Sort</option>
+                <option value = "merge">Merge Sort</option>
+                <option value = "quick" >Quick Sort</option>
+                <option value = "comb" >Comb Sort</option>
+                <option value = "counting">Counting Sort</option>
+                <option value = "radix">Radix Sort</option>
+            </select>
+        </section>
+        <section>
+            <button id = "start" class = "button" onclick = "start()">start</button>
+            <button id = "randomise" class = "button" onclick = "randomise()">randomise</button>
+        </section>
+        <section>
+            <select class ="select" name = "visType" id = "visType" oninput="updateInput()">
+                <option value = "bar" selected>Bar Visualizer</option>
+                <option value = "point">Point Visualizer</option>
+                <option value = "coloredTri">colored Triangle Visualizer</option>
+            </select>
+        </section>
+        
+    </div>
+    <canvas id="myCanvas"></canvas>
+    
+    
+    <script src="visualizer.js"></script>
+    <script src="algorithms.js"></script>
+    <script src="obj.js"></script>
+    <script src="main.js"></script>
+    
+</body>
+</html>
