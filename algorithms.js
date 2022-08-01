@@ -161,11 +161,9 @@ class Algorithms {
       let n = sample.nums
       for(let i = 0 ; i < n ; ++i){
         while(i != sample.obj[i].key - 1){
-          console.log(i, sample.obj[i].key - 1);
           await sample.swap(i, sample.obj[i].key - 1)
         }
       }
-
   }
 }
 

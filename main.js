@@ -20,7 +20,6 @@ function updateInput(){
 
 async function start(){
     disableInput()
-    console.log(sortingType);
     await sample.sort(sortingType)
     Visualizer.writeText(ctx, sample.issorted ? "All sorted, nicely done 👍" : "Aww, Snap💀! Something went wrong", 10, 45, 30)
 
@@ -32,10 +31,6 @@ function randomise(){
     sample.draw(ctx)
 }
 
-function animate(){
-    redraw()
-    requestAnimationFrame(animate)
-}
 
 function disableInput(){
     document.getElementById("range").disabled = true
