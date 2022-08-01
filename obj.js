@@ -76,6 +76,9 @@ class ObjSet{
             case "radix":
                 await Algorithms.radixSort(this)
                 break
+            case "cyclic":
+                await Algorithms.cyclicSort(this)
+                break
         }
         this.issorted = await this.check()
     }

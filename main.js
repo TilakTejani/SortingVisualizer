@@ -20,7 +20,7 @@ function updateInput(){
 
 async function start(){
     disableInput()
-
+    console.log(sortingType);
     await sample.sort(sortingType)
     Visualizer.writeText(ctx, sample.issorted ? "All sorted, nicely done 👍" : "Aww, Snap💀! Something went wrong", 10, 45, 30)
 
